@@ -551,3 +551,82 @@ http://192.168.56.121:50070/dfshealth.html#tab-overview
 ![image-20210429202655243](assets/image-20210429202655243.png)
 
 ![image-20210429202734187](assets/image-20210429202734187.png)
+
+
+
+## Others
+
+### how to push big size file to github
+
+https://blog.csdn.net/wifi74262580/article/details/85060187
+
+
+
+```bash
+git lfs install
+git lfs track "*.gz"
+git add "hadoop-2.8.5.tar.gz"
+git commit -m "add hadoop"
+git push origin master
+```
+
+
+
+```cmd
+D:\ws2021\gentelman\hadoop-cluster-builder>git lfs install
+Updated git hooks.
+Git LFS initialized.
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git lfs track "*.gz"
+Tracking "*.gz"
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git add .gitattributes
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git add "hadoop-2.8.5.tar.gz"
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git commit -m "add hadoop"
+[master 4b97148] add hadoop
+ 2 files changed, 5 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 hadoop-2.8.5.tar.gz
+
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git push origin master
+Uploading LFS objects: 100% (1/1), 246 MB | 10 MB/s, done.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 479 bytes | 479.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/striderw/hadoop-cluster-builder.git
+   6959c41..4b97148  master -> master
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git add "jdk-11.0.11_linux-x64_bin.tar.gz"
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git commit -m "add jdk"
+[master abc95d6] add jdk
+ 1 file changed, 3 insertions(+)
+ create mode 100644 jdk-11.0.11_linux-x64_bin.tar.gz
+
+D:\ws2021\gentelman\hadoop-cluster-builder>git push origin master
+Uploading LFS objects: 100% (1/1), 182 MB | 6.7 MB/s, done.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 394 bytes | 394.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/striderw/hadoop-cluster-builder.git
+   4b97148..abc95d6  master -> master
+
+D:\ws2021\gentelman\hadoop-cluster-builder>
+
+```
+
+
+
+
+
